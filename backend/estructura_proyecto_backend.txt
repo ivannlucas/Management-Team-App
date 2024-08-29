@@ -1,0 +1,77 @@
+.
+├── README
+├── README.md
+├── cert
+│   ├── server.cert
+│   └── server.key
+├── config
+│   └── config.json
+├── data
+├── dockerfile
+├── estructura_proyecto_backend.txt
+├── init
+│   └── init.sql
+├── jest.config.ts
+├── jsdoc.conf.json
+├── nodemon.json
+├── package-lock.json
+├── package.json
+├── src
+│   ├── app.ts
+│   ├── config.ts
+│   ├── controllers
+│   │   ├── autenticacion.controller.ts
+│   │   ├── conversaciones.controller.ts
+│   │   ├── entrenadores.controller.ts
+│   │   ├── entrenamientos.controller.ts
+│   │   ├── equipo.controller.ts
+│   │   ├── estadisticas.controller.ts
+│   │   ├── estadisticas_partido.controller.ts
+│   │   ├── jugadores.controller.ts
+│   │   ├── mensajes.controller.ts
+│   │   ├── notas.controller.ts
+│   │   ├── partidos.controller.ts
+│   │   └── usuarios.controller.ts
+│   ├── middleware
+│   │   └── multer.ts
+│   ├── models
+│   │   ├── conversaciones.model.ts
+│   │   ├── entrenadores.model.ts
+│   │   ├── entrenamientos.model.ts
+│   │   ├── equipo.model.ts
+│   │   ├── estadisticas.model.ts
+│   │   ├── estadisticas_partido.model.ts
+│   │   ├── index.ts
+│   │   ├── jugadores.model.ts
+│   │   ├── mensajes.model.ts
+│   │   ├── notas.model.ts
+│   │   ├── partidos.model.ts
+│   │   └── usuarios.model.ts
+│   ├── routes
+│   │   ├── autentication.routes.ts
+│   │   ├── conversaciones.routes.ts
+│   │   ├── entrenadores.routes.ts
+│   │   ├── entrenamientos.routes.ts
+│   │   ├── equipo.routes.ts
+│   │   ├── estadisticas.routes.ts
+│   │   ├── estadisticas_partido.routes.ts
+│   │   ├── index.ts
+│   │   ├── jugadores.routes.ts
+│   │   ├── mensajes.routes.ts
+│   │   ├── notas.routes.ts
+│   │   ├── partidos.routes.ts
+│   │   └── usuarios.routes.ts
+│   ├── server.ts
+│   ├── types
+│   │   ├── express.d.ts
+│   │   └── uuid.d.ts
+│   └── utils
+│       ├── aws.ts
+│       └── nodemailer.ts
+├── test
+│   ├── autentication.test.ts
+│   └── usuarios.test.ts
+├── tsconfig.json
+└── typedoc.json
+
+12 directories, 62 files

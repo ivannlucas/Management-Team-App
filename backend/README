@@ -1,0 +1,25 @@
+# Generar Documentacion tecnica del codigo con TypeDoc
+npm install --save-dev typedoc
+
+# Configurar TypeDoc utilizando un archivo de configuración typedoc.json
+
+# Documentar tu Código, Ejemplo
+/**
+ * Suma dos números.
+ * @param a {number} Primer número.
+ * @param b {number} Segundo número.
+ * @returns {number} La suma de a y b.
+ */
+
+ # Generar la Documentación
+ npx typedoc
+
+# Esto generará la documentación en el directorio especificado en la configuración (./docs)
+# Automatización con Scripts, añadir en el package.json y luego ejecutar
+npm run generate-docs
+
+# Generar clave segura con openssl
+openssl rand -hex 32
+
+# Generar arbol de directorios del proyecto excluyendo esas carpetas
+tree -I 'dist|node_modules|docs|lib' > estructura_proyecto_backend.txt

@@ -1,0 +1,22 @@
+{
+    "redirect": false,
+    "http": {
+      "port": 80,
+      "bind": "0.0.0.0"
+    },
+    "https": {
+      "port": 443,
+      "bind": "0.0.0.0",
+      "privateKey": "./cert/server.key",
+      "certificate": "./cert/server.cert"
+    },
+    "db": {
+        "connectionString": "postgresql://aibem_user:aibem_2023?!@postgresql:5432/aibem"
+    },
+    "oauth": {
+        "authURL": "auth-url",
+        "tokenURL": "token-url",
+        "clientID": "client-id",
+        "clientSecret": "client-secret"
+    }
+}

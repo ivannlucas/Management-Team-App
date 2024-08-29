@@ -1,0 +1,17 @@
+{
+    "source": {
+      "include": ["src"],  
+      "includePattern": ".+\\.ts(doc|x)?$",
+      "excludePattern": "(node_modules/|docs)"
+    },
+    "opts": {
+      "destination": "./docs",  
+      "recurse": true,
+      "template": "default"
+    },
+    "plugins": ["plugins/markdown"],
+    "typescript": {
+      "moduleRoot": "src"  
+    }
+  }
+  
