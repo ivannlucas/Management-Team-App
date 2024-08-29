@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: services/entrenadores/entrenadores.service.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: services/entrenadores/entrenadores.service.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import axiosInstance from "../api"
+
+/**
+ * Servicio para la gestión de entrenadores.
+ */
+class EntrenadorService {
+    /**
+     * Crea un nuevo entrenador.
+     * @param {Object} entrenadorData - Los datos del entrenador a crear.
+     * @returns {Promise&lt;Object>} - Los datos del entrenador creado.
+     */
+    async createEntrenador(entrenadorData) {
+        const response = await axiosInstance.post("/api/entrenadores", entrenadorData);
+        return response.data;
+    }
+
+    /**
+     * Obtiene todos los entrenadores.
+     * @returns {Promise&lt;Object[]>} - Una lista de todos los entrenadores.
+     */
+    async getAllEntrenadores() {
+        const response = await axiosInstance.get("/api/entrenadores");
+        return response.data;
+    }
+
+    /**
+     * Obtiene un entrenador por su ID.
+     * @param {string|number} id - El ID del entrenador.
+     * @returns {Promise&lt;Object>} - Los datos del entrenador.
+     */
+    async getEntrenadorById(id) {
+        const response = await axiosInstance.get(`/api/entrenadores/${id}`);
+        return response.data;
+    }
+
+    /**
+     * Actualiza un entrenador existente.
+     * @param {string|number} id - El ID del entrenador.
+     * @param {Object} entrenadorData - Los nuevos datos del entrenador.
+     * @returns {Promise&lt;Object>} - Los datos del entrenador actualizado.
+     */
+    async updateEntrenador(id, entrenadorData) {
+        const response = await axiosInstance.put(`/api/entrenadores/${id}`, entrenadorData);
+        return response.data;
+    }
+
+    /**
+     * Actualiza los detalles específicos de un entrenador.
+     * @param {string|number} id - El ID del entrenador.
+     * @param {Object} detalles - Los nuevos detalles del entrenador.
+     * @returns {Promise&lt;Object>} - Los datos del entrenador con los detalles actualizados.
+     */
+    async updateEntrenadorDetalles(id, detalles) {
+        const response = await axiosInstance.put(`/api/entrenadores/${id}/detalles`, detalles);
+        return response.data;
+    }
+
+    /**
+     * Elimina un entrenador por su ID.
+     * @param {string|number} id - El ID del entrenador.
+     * @returns {Promise&lt;Object>} - La respuesta del servidor sobre la eliminación.
+     */
+    async deleteEntrenador(id) {
+        const response = await axiosInstance.delete(`/api/entrenadores/${id}`);
+        return response.data;
+    }
+}
+
+export default new EntrenadorService();
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-errorsLogin.html">errorsLogin</a></li><li><a href="module-errorsRegister.html">errorsRegister</a></li></ul><h3>Classes</h3><ul><li><a href="AuthService.html">AuthService</a></li><li><a href="ConversacionesService.html">ConversacionesService</a></li><li><a href="EntrenadorService.html">EntrenadorService</a></li><li><a href="EntrenamientosService.html">EntrenamientosService</a></li><li><a href="EquipoService.html">EquipoService</a></li><li><a href="EstadisticasPartidosService.html">EstadisticasPartidosService</a></li><li><a href="EstadisticasService.html">EstadisticasService</a></li><li><a href="JugadoresService.html">JugadoresService</a></li><li><a href="MensajesService.html">MensajesService</a></li><li><a href="NotasCalendarioService.html">NotasCalendarioService</a></li><li><a href="PartidosService.html">PartidosService</a></li><li><a href="UsuariosService.html">UsuariosService</a></li></ul><h3>Events</h3><ul><li><a href="global.html#MyShared#.event:emits">emits</a></li><li><a href="global.html#event:editPerson">editPerson</a></li></ul><h3>Mixins</h3><ul><li><a href="global.html#MyShared">MyShared</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CalendarComponent">CalendarComponent</a></li><li><a href="global.html#ChangePassword">ChangePassword</a></li><li><a href="global.html#Chat">Chat</a></li><li><a href="global.html#GamesStatistics">GamesStatistics</a></li><li><a href="global.html#GamesTable">GamesTable</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Players">Players</a></li><li><a href="global.html#Profile">Profile</a></li><li><a href="global.html#Team">Team</a></li><li><a href="global.html#TrainingTable">TrainingTable</a></li><li><a href="global.html#VerifyEmail">VerifyEmail</a></li><li><a href="global.html#altura">altura</a></li><li><a href="global.html#apellidos">apellidos</a></li><li><a href="global.html#api">api</a></li><li><a href="global.html#arrayDefensas">arrayDefensas</a></li><li><a href="global.html#arrayDelanteros">arrayDelanteros</a></li><li><a href="global.html#arrayMedios">arrayMedios</a></li><li><a href="global.html#arrayPorteros">arrayPorteros</a></li><li><a href="global.html#card">card</a></li><li><a href="global.html#cascadePos">cascadePos</a></li><li><a href="global.html#createUser">createUser</a></li><li><a href="global.html#currentStep">currentStep</a></li><li><a href="global.html#edad">edad</a></li><li><a href="global.html#email">email</a></li><li><a href="global.html#emailReset">emailReset</a></li><li><a href="global.html#enlaceInvitacion">enlaceInvitacion</a></li><li><a href="global.html#equipo_id">equipo_id</a></li><li><a href="global.html#equipo_local">equipo_local</a></li><li><a href="global.html#equipo_visitante">equipo_visitante</a></li><li><a href="global.html#estado">estado</a></li><li><a href="global.html#everyTraining">everyTraining</a></li><li><a href="global.html#exercises">exercises</a></li><li><a href="global.html#faltas_equipo_local">faltas_equipo_local</a></li><li><a href="global.html#faltas_equipo_visitante">faltas_equipo_visitante</a></li><li><a href="global.html#fecha">fecha</a></li><li><a href="global.html#fecha_hora">fecha_hora</a></li><li><a href="global.html#filters">filters</a></li><li><a href="global.html#games">games</a></li><li><a href="global.html#goles_equipo_local">goles_equipo_local</a></li><li><a href="global.html#goles_equipo_visitante">goles_equipo_visitante</a></li><li><a href="global.html#horaFin">horaFin</a></li><li><a href="global.html#horaInicio">horaInicio</a></li><li><a href="global.html#id_conversacion">id_conversacion</a></li><li><a href="global.html#isDisabled">isDisabled</a></li><li><a href="global.html#isDisabledLocal">isDisabledLocal</a></li><li><a href="global.html#isDisabledStatistics">isDisabledStatistics</a></li><li><a href="global.html#isDisabledVisitante">isDisabledVisitante</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#layout">layout</a></li><li><a href="global.html#loading">loading</a></li><li><a href="global.html#lugar">lugar</a></li><li><a href="global.html#mensajes">mensajes</a></li><li><a href="global.html#menssage">menssage</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#newPassword1">newPassword1</a></li><li><a href="global.html#newPassword2">newPassword2</a></li><li><a href="global.html#nombre">nombre</a></li><li><a href="global.html#nombreEquipo">nombreEquipo</a></li><li><a href="global.html#numExercises">numExercises</a></li><li><a href="global.html#num_camiseta">num_camiseta</a></li><li><a href="global.html#partido">partido</a></li><li><a href="global.html#pass">pass</a></li><li><a href="global.html#pass1">pass1</a></li><li><a href="global.html#pass2">pass2</a></li><li><a href="global.html#peso">peso</a></li><li><a href="global.html#posesion_balon_equipo_local">posesion_balon_equipo_local</a></li><li><a href="global.html#posesion_balon_equipo_visitante">posesion_balon_equipo_visitante</a></li><li><a href="global.html#posicion">posicion</a></li><li><a href="global.html#pp">pp</a></li><li><a href="global.html#productService">productService</a></li><li><a href="global.html#rol">rol</a></li><li><a href="global.html#roles">roles</a></li><li><a href="global.html#router">router</a></li><li><a href="global.html#routes">routes</a></li><li><a href="global.html#selectedFile">selectedFile</a></li><li><a href="global.html#selectedId">selectedId</a></li><li><a href="global.html#selectedPos">selectedPos</a></li><li><a href="global.html#showDialog">showDialog</a></li><li><a href="global.html#socket">socket</a></li><li><a href="global.html#sortField">sortField</a></li><li><a href="global.html#sortKey">sortKey</a></li><li><a href="global.html#sortOptions">sortOptions</a></li><li><a href="global.html#sortOrder">sortOrder</a></li><li><a href="global.html#statistics">statistics</a></li><li><a href="global.html#subtitle">subtitle</a></li><li><a href="global.html#tarjetas_amarillas_equipo_local">tarjetas_amarillas_equipo_local</a></li><li><a href="global.html#tarjetas_amarillas_equipo_visitante">tarjetas_amarillas_equipo_visitante</a></li><li><a href="global.html#tarjetas_rojas_equipo_local">tarjetas_rojas_equipo_local</a></li><li><a href="global.html#tarjetas_rojas_equipo_visitante">tarjetas_rojas_equipo_visitante</a></li><li><a href="global.html#tiros_esquina_equipo_local">tiros_esquina_equipo_local</a></li><li><a href="global.html#tiros_esquina_equipo_visitante">tiros_esquina_equipo_visitante</a></li><li><a href="global.html#tiros_gol_equipo_local">tiros_gol_equipo_local</a></li><li><a href="global.html#tiros_gol_equipo_visitante">tiros_gol_equipo_visitante</a></li><li><a href="global.html#title">title</a></li><li><a href="global.html#token">token</a></li><li><a href="global.html#tokenInvitacion">tokenInvitacion</a></li><li><a href="global.html#trainingId">trainingId</a></li><li><a href="global.html#urlTemporal">urlTemporal</a></li><li><a href="global.html#user">user</a></li><li><a href="global.html#users">users</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Aug 26 2024 21:27:40 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

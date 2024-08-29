@@ -1,0 +1,200 @@
+.
+├── README.md
+├── babel.config.js
+├── dockerfile
+├── estructura_proyecto_frontend.txt
+├── jsconfig.json
+├── jsdoc.conf.json
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── styles.css
+├── src
+│   ├── App.vue
+│   ├── assets
+│   │   ├── Fondo_Campo.jpg
+│   │   ├── Foto_Login.jpeg
+│   │   ├── aro.png
+│   │   ├── balon.png
+│   │   ├── campo_board.png
+│   │   ├── cara1.png
+│   │   ├── cara2.png
+│   │   ├── cara3.png
+│   │   ├── cara4.png
+│   │   ├── cara5.png
+│   │   ├── cono.png
+│   │   ├── fondo.jpg
+│   │   ├── fondoEscudo.png
+│   │   ├── fondo_chat.jpg
+│   │   ├── fotoPerfil.jpg
+│   │   ├── home_image.jpg
+│   │   ├── jugador_azul.png
+│   │   ├── jugador_rojo.png
+│   │   ├── logo.png
+│   │   ├── mft.png
+│   │   ├── mft_sinfondo.png
+│   │   ├── porteria.png
+│   │   └── sprite_events_new.png
+│   ├── components
+│   │   ├── Board
+│   │   │   ├── DesktopBoard.vue
+│   │   │   ├── MobileBoard.vue
+│   │   │   └── TabletBoard.vue
+│   │   ├── Calendar
+│   │   │   ├── DesktopCalendar.vue
+│   │   │   ├── MobileCalendar.vue
+│   │   │   ├── TabletCalendar.vue
+│   │   │   └── shared.js
+│   │   ├── ChangePassword
+│   │   │   ├── DesktopChangePassword.vue
+│   │   │   ├── MobileChangePassword.vue
+│   │   │   ├── TabletChangePassword.vue
+│   │   │   └── shared.js
+│   │   ├── Chat
+│   │   │   ├── DesktopChat.vue
+│   │   │   ├── MobileChat.vue
+│   │   │   ├── TabletChat.vue
+│   │   │   └── shared.js
+│   │   ├── Dashboard
+│   │   │   ├── DesktopDashboard.vue
+│   │   │   ├── MobileDashboard.vue
+│   │   │   └── TabletDashboard.vue
+│   │   ├── Games
+│   │   │   ├── DesktopGames.vue
+│   │   │   ├── MobileGames.vue
+│   │   │   ├── TabletGames.vue
+│   │   │   └── shared.js
+│   │   ├── GamesStatistics
+│   │   │   ├── DesktopGamesStatistics.vue
+│   │   │   ├── MobileGamesStatistics.vue
+│   │   │   ├── TabletGamesStatistics.vue
+│   │   │   └── shared.js
+│   │   ├── GenerateLink
+│   │   │   ├── DesktopGenerateLink.vue
+│   │   │   ├── MobileGenerateLink.vue
+│   │   │   ├── TabletGenerateLink.vue
+│   │   │   └── shared.js
+│   │   ├── Home
+│   │   │   ├── DesktopHome.vue
+│   │   │   ├── MobileHome.vue
+│   │   │   ├── TabletHome.vue
+│   │   │   └── shared.js
+│   │   ├── Login
+│   │   │   ├── DesktopLogin.vue
+│   │   │   ├── MobileLogin.vue
+│   │   │   ├── TabletLogin.vue
+│   │   │   └── shared.js
+│   │   ├── Partials
+│   │   │   ├── Calendar.vue
+│   │   │   ├── ChatComponents
+│   │   │   │   ├── MessageCard.vue
+│   │   │   │   └── UserCard.vue
+│   │   │   ├── Modal.vue
+│   │   │   ├── NavbarBashboard.vue
+│   │   │   ├── SidebarDashboard.vue
+│   │   │   └── SidebarHome.vue
+│   │   ├── Players
+│   │   │   ├── DesktopPlayers.vue
+│   │   │   ├── MobilePlayers.vue
+│   │   │   ├── TabletPlayers.vue
+│   │   │   └── shared.js
+│   │   ├── Profile
+│   │   │   ├── DesktopProfile.vue
+│   │   │   ├── MobileProfile.vue
+│   │   │   ├── TabletProfile.vue
+│   │   │   └── shared.js
+│   │   ├── Register
+│   │   │   ├── DesktopRegister.vue
+│   │   │   ├── MobileRegister.vue
+│   │   │   └── TabletRegister.vue
+│   │   ├── RegisterPlayers
+│   │   │   ├── DesktopRegisterPlayers.vue
+│   │   │   ├── MobileRegisterPlayers.vue
+│   │   │   ├── TabletRegisterPlayers.vue
+│   │   │   └── shared.js
+│   │   ├── Statistics
+│   │   │   ├── DesktopStatistics.vue
+│   │   │   ├── MobileStatistics.vue
+│   │   │   └── TabletStatistics.vue
+│   │   ├── Team
+│   │   │   ├── DesktopTeam.vue
+│   │   │   ├── MobileTeam.vue
+│   │   │   ├── TabletTeam.vue
+│   │   │   └── shared.js
+│   │   ├── Training
+│   │   │   ├── DesktopTraining.vue
+│   │   │   ├── MobileTraining.vue
+│   │   │   ├── TabletTraining.vue
+│   │   │   └── shared.js
+│   │   ├── VerifyEmail
+│   │   │   ├── DesktopVerifyEmail.vue
+│   │   │   ├── MobileVerifyEmail.vue
+│   │   │   ├── TabletVerifyEmail.vue
+│   │   │   └── shared.js
+│   │   └── charts
+│   │       ├── ColumnChart.vue
+│   │       ├── LineChart.vue
+│   │       └── PieChart.vue
+│   ├── cors.json
+│   ├── dist
+│   ├── hooks
+│   │   ├── errorsLogin.js
+│   │   └── errorsRegister.js
+│   ├── main.js
+│   ├── router
+│   │   └── index.js
+│   ├── services
+│   │   ├── api.js
+│   │   ├── auth
+│   │   │   └── auth.service.js
+│   │   ├── conversaciones
+│   │   │   └── conversaciones.service.js
+│   │   ├── entrenadores
+│   │   │   └── entrenadores.service.js
+│   │   ├── entrenamientos
+│   │   │   └── entrenamientos.service.js
+│   │   ├── equipo
+│   │   │   └── equipo.service.js
+│   │   ├── estadisticas
+│   │   │   └── estadisticas.service.js
+│   │   ├── estadisticasPartido
+│   │   │   └── estadisticasPartido.service.js
+│   │   ├── jugadores
+│   │   │   └── jugadores.service.js
+│   │   ├── mensajes
+│   │   │   └── mensajes.service.js
+│   │   ├── notas
+│   │   │   └── notas.service.js
+│   │   ├── partidos
+│   │   │   └── partidos.service.js
+│   │   └── usuarios
+│   │       └── usuarios.service.js
+│   ├── store
+│   │   ├── index.js
+│   │   └── modules
+│   │       ├── authentication.js
+│   │       └── plantilla.js
+│   └── views
+│       ├── Board.vue
+│       ├── Calendar.vue
+│       ├── ChangePassword.vue
+│       ├── Chat.vue
+│       ├── Dashboard.vue
+│       ├── Games.vue
+│       ├── GamesStatistics.vue
+│       ├── GenerateLink.vue
+│       ├── Home.vue
+│       ├── Login.vue
+│       ├── Players.vue
+│       ├── Profile.vue
+│       ├── Register.vue
+│       ├── RegisterPlayers.vue
+│       ├── Statistics.vue
+│       ├── Team.vue
+│       ├── Training.vue
+│       └── VerifyEmail.vue
+└── vue.config.js
+
+44 directories, 153 files
