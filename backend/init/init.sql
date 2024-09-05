@@ -107,27 +107,19 @@ CREATE TABLE IF NOT EXISTS entrenamientos (
     FOREIGN KEY (equipo_id) REFERENCES equipo(id)
 );
 
--- CREATE TABLE IF NOT EXISTS notas_calendario (
---     id SERIAL PRIMARY KEY,
---     equipo_id INT NOT NULL,
---     titulo VARCHAR(255) NOT NULL,
---     type tipo_evento NOT NULL,
---     fecha_hora TIMESTAMP NOT NULL,
---     FOREIGN KEY (equipo_id) REFERENCES equipo(id)
--- );
 CREATE TABLE IF NOT EXISTS notas_calendario (
-    id SERIAL PRIMARY KEY,               -- ID único para cada evento
-    equipo_id INT NOT NULL,              -- ID del equipo al que pertenece el evento
-    titulo VARCHAR(255) NOT NULL,        -- Título del evento
+    id SERIAL PRIMARY KEY,              
+    equipo_id INT NOT NULL,              
+    titulo VARCHAR(255) NOT NULL,        
     type tipo_evento NOT NULL,
-    bgColor VARCHAR(7),                  -- Color de fondo del evento (en formato HEX, ej. '#FF5733')
-    borderColor VARCHAR(7),              -- Color del borde del evento (en formato HEX)
-    color VARCHAR(7),                    -- Color del texto del evento (en formato HEX)
-    dragBgColor VARCHAR(7),              -- Color de fondo al arrastrar el evento (en formato HEX)
-    dueDateClass VARCHAR(50),            -- Clase CSS para definir la apariencia del evento (opcional)
-    start TIMESTAMP NOT NULL,            -- Fecha y hora de inicio del evento
-    end_time TIMESTAMP NOT NULL,         -- Fecha y hora de finalización del evento
-    FOREIGN KEY (equipo_id) REFERENCES equipo(id) -- Clave foránea al equipo
+    bgColor VARCHAR(7),                  
+    borderColor VARCHAR(7),              
+    color VARCHAR(7),                    
+    dragBgColor VARCHAR(7),             
+    dueDateClass VARCHAR(50),           
+    start TIMESTAMP NOT NULL,            
+    end_time TIMESTAMP NOT NULL,         
+    FOREIGN KEY (equipo_id) REFERENCES equipo(id)
 );
 
 
@@ -158,24 +150,33 @@ INSERT INTO equipo (token, nombre_equipo) VALUES
 ('f32d7af1b2e57b2', 'Villamayor'),
 ('f32d7af1b2e57b3', 'Bejar');
 
-INSERT INTO usuarios (nombre, apellidos, email, password, rol) VALUES
-('Juan', 'Perez', 'juan@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'jugador'),
-('Ivan', 'Lucas', 'ivannlucas@hotmail.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'entrenador'),
-('Luis', 'Lopez', 'luis@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'jugador'),
-('Maria', 'Diaz', 'maria@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'jugador'),
-('Carlos', 'Garcia', 'carlos@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'entrenador');
+INSERT INTO usuarios (nombre, apellidos, email, password, rol, image_id) VALUES
+('Juan', 'Perez', 'juan@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'jugador','https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/profiles/1f71a7be-c6b8-42df-b081-5fc17d3a4f4d.PNG' ),
+('Ivan', 'Lucas', 'ivannlucas@hotmail.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'entrenador','https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/profiles/Imagen_ivan.jpg'),
+('Luis', 'Lopez', 'luislopez@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'jugador','https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/profiles/1f71a7be-c6b8-42df-b081-5fc17d3a4f4e.PNG'),
+('Pedro', 'Hernandez', 'pedro@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'jugador','https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/profiles/2f71a7be-c6b8-42df-b081-5fc17d3a4f4p.PNG'),
+('Jorge', 'Martinez', 'jorge@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'jugador','https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/profiles/2f71a7be-c6b8-42df-b081-5fc17d3a4f4t.PNG'),
+('Luis', 'Moro', 'luis@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'jugador','https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/profiles/3f71a7be-c6b8-42df-b081-5fc17d3a4f4d.PNG'),
+('Maria', 'Diaz', 'maria@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'jugador','https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/profiles/5f71a7be-c6b8-42df-b081-5fc17d3a4f4d.jpg'),
+('Carlos', 'Garcia', 'carlos@example.com', '$2a$10$g9UnWZ/yie1Dh3.lV.WX2OwoHhNr7onejc5pK9ku/gz.h3MoJoofq', 'entrenador','');
 
 INSERT INTO estadisticas (partidos_jugados, minutos_jugados, goles_anotados, asistencias, tarjetas_amarillas, tarjetas_rojas) VALUES
 (10, 900, 5, 3, 1, 0),
 (12, 1080, 7, 2, 2, 0),
 (15, 1350, 10, 5, 3, 1),
 (20, 1800, 15, 7, 4, 2),
+(20, 1800, 15, 7, 4, 2),
+(20, 1800, 15, 7, 4, 2),
 (5, 450, 2, 1, 0, 0);
 
 INSERT INTO jugadores (usuario_id, equipo_id, nombre_jugador, numero_camiseta, edad, altura, peso, posicion, estadisticas_id) VALUES
 (1, 1, 'Juan Perez', 10, 25, 1.75, 70, 'Delantero centro', 1),
 (3, 1, 'Luis Lopez', 9, 22, 1.80, 75, 'Central', 2),
-(4, 1, 'Maria Diaz', 7, 28, 1.65, 60, 'Mediocentro Ofensivo', 3);
+(8, 1, 'Carlos Garcia', 4, 30, 1.85, 80, 'Defensa', 4),
+(4, 1, 'Pedro Hernandez', 11, 26, 1.78, 72, 'Extremo Derecho', 5),
+(5, 1, 'Jorge Martinez', 6, 24, 1.70, 68, 'Lateral Izquierdo', 6),
+(6, 1, 'Luis Moro', 6, 24, 1.70, 68, 'Portero', 7),
+(7, 1, 'Maria Diaz', 7, 28, 1.65, 60, 'Mediocentro Ofensivo', 3);
 
 
 INSERT INTO entrenadores (usuario_id, equipo_id, nombre_entrenador, edad, anios_experiencia, equipo_actual) VALUES
@@ -187,19 +188,28 @@ INSERT INTO estadisticas_partidos (posesion_balon_equipo_local, posesion_balon_e
 (55.0, 45.0, 9, 6, 4, 2, 10, 13, 1, 1, 0, 1),
 (70.0, 30.0, 15, 5, 8, 1, 14, 12, 3, 2, 0, 0),
 (40.0, 60.0, 5, 12, 2, 6, 8, 18, 1, 4, 1, 2),
+(52.0, 48.0, 8, 7, 3, 4, 10, 12, 2, 2, 0, 1),
+(60.0, 40.0, 10, 6, 5, 3, 9, 10, 1, 3, 0, 0),
+(45.0, 55.0, 7, 9, 4, 6, 11, 14, 3, 4, 1, 1),
 (65.0, 35.0, 12, 7, 7, 2, 10, 16, 2, 2, 0, 1);
 
 INSERT INTO partidos (equipo_local_id, equipo_local_nombre, equipo_visitante_id, equipo_visitante_nombre, fecha_hora, lugar, goles_equipo_local, goles_equipo_visitante, estado, estadisticas_partido_id) VALUES
 (1, 'Navega', 2, 'Helmantico', '2023-08-20 15:00:00', 'Estadio 1', 3, 2, 'FINALIZADO', 1),
 (3, 'Monterrey', 1, 'Navega', '2023-08-21 17:00:00', 'Estadio 2', 1, 1, 'FINALIZADO', 2),
+(1, 'Navega', 3, 'Monterrey', '2023-09-01 16:00:00', 'Estadio 4', 2, 2, 'FINALIZADO', 4),
+(1, 'Navega', 5, 'Bejar', '2023-09-05 18:00:00', 'Estadio 5', 3, 1, 'FINALIZADO', 5),
+(2, 'Helmantico', 1, 'Navega', '2023-09-10 19:00:00', 'Estadio 1', 1, 4, 'FINALIZADO', 6),
 (5, 'Bejar', 4, 'Villamayor', '2023-08-22 19:00:00', 'Estadio 3', 0, 4, 'FINALIZADO', 3);
 
 INSERT INTO entrenamientos (equipo_id, exercises, fecha, hora_inicio, hora_fin, name, numexercises) VALUES
 (1, '[{"title":"Rondos","description":"Dar pases","material":"4 conos, 3 balones","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/feecb442-4c9f-47b6-8b3a-886b428915fe"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633777632419.jpg"},{"title":"Posesion","description":"Dar el mayor numero de pases posibles sin que el rival robe el balon","material":"6 conos, 7 picas","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/db49f1d9-0d0c-45f3-881c-cd82a8893f5a"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633779310322.jpg"}]', '2024-08-23 22:00:00', '2023-08-25 09:00:00', '2023-08-25 11:00:00', 'Entrenamiento 1', 2),
-(1, '[{"nombre":"Ejercicio 3","duracion":"45 min"},{"nombre":"Ejercicio 4","duracion":"20 min"}]', '2023-08-26 22:00:00', '2023-08-26 10:00:00', '2023-08-26 12:00:00', 'Entrenamiento 2', 2),
-(1, '[{"nombre":"Ejercicio 5","duracion":"50 min"},{"nombre":"Ejercicio 6","duracion":"25 min"}]', '2023-08-27 22:00:00', '2023-08-27 08:00:00', '2023-08-27 10:00:00', 'Entrenamiento 3', 2),
-(1, '[{"nombre":"Ejercicio 7","duracion":"60 min"},{"nombre":"Ejercicio 8","duracion":"30 min"}]', '2023-08-28 22:00:00', '2023-08-28 07:00:00', '2023-08-28 09:00:00', 'Entrenamiento 4', 2),
-(1, '[{"nombre":"Ejercicio 9","duracion":"40 min"},{"nombre":"Ejercicio 10","duracion":"20 min"}]', '2023-08-29 22:00:00', '2023-08-29 06:00:00', '2023-08-29 08:00:00', 'Entrenamiento 5', 2);
+(1, '[{"title":"Rondos","description":"Dar pases","material":"4 conos, 3 balones","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/feecb442-4c9f-47b6-8b3a-886b428915fe"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633777632419.jpg"},{"title":"Posesion","description":"Dar el mayor numero de pases posibles sin que el rival robe el balon","material":"6 conos, 7 picas","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/db49f1d9-0d0c-45f3-881c-cd82a8893f5a"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633779310322.jpg"}]', '2023-09-02 22:00:00', '2023-09-02 07:00:00', '2023-09-02 09:00:00', 'Entrenamiento 6', 2),
+(1, '[{"title":"Rondos","description":"Dar pases","material":"4 conos, 3 balones","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/feecb442-4c9f-47b6-8b3a-886b428915fe"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633777632419.jpg"},{"title":"Posesion","description":"Dar el mayor numero de pases posibles sin que el rival robe el balon","material":"6 conos, 7 picas","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/db49f1d9-0d0c-45f3-881c-cd82a8893f5a"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633779310322.jpg"}]', '2023-09-03 22:00:00', '2023-09-03 08:00:00', '2023-09-03 10:00:00', 'Entrenamiento 7', 2),
+(1, '[{"title":"Rondos","description":"Dar pases","material":"4 conos, 3 balones","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/feecb442-4c9f-47b6-8b3a-886b428915fe"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633777632419.jpg"},{"title":"Posesion","description":"Dar el mayor numero de pases posibles sin que el rival robe el balon","material":"6 conos, 7 picas","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/db49f1d9-0d0c-45f3-881c-cd82a8893f5a"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633779310322.jpg"}]', '2023-09-04 22:00:00', '2023-09-04 06:00:00', '2023-09-04 08:00:00', 'Entrenamiento 8', 2),
+(1, '[{"title":"Rondos","description":"Dar pases","material":"4 conos, 3 balones","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/feecb442-4c9f-47b6-8b3a-886b428915fe"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633777632419.jpg"},{"title":"Posesion","description":"Dar el mayor numero de pases posibles sin que el rival robe el balon","material":"6 conos, 7 picas","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/db49f1d9-0d0c-45f3-881c-cd82a8893f5a"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633779310322.jpg"}]', '2023-08-26 22:00:00', '2023-08-26 10:00:00', '2023-08-26 12:00:00', 'Entrenamiento 2', 2),
+(1, '[{"title":"Rondos","description":"Dar pases","material":"4 conos, 3 balones","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/feecb442-4c9f-47b6-8b3a-886b428915fe"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633777632419.jpg"},{"title":"Posesion","description":"Dar el mayor numero de pases posibles sin que el rival robe el balon","material":"6 conos, 7 picas","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/db49f1d9-0d0c-45f3-881c-cd82a8893f5a"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633779310322.jpg"}]', '2023-08-27 22:00:00', '2023-08-27 08:00:00', '2023-08-27 10:00:00', 'Entrenamiento 3', 2),
+(1, '[{"title":"Rondos","description":"Dar pases","material":"4 conos, 3 balones","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/feecb442-4c9f-47b6-8b3a-886b428915fe"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633777632419.jpg"},{"title":"Posesion","description":"Dar el mayor numero de pases posibles sin que el rival robe el balon","material":"6 conos, 7 picas","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/db49f1d9-0d0c-45f3-881c-cd82a8893f5a"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633779310322.jpg"}]', '2023-08-28 22:00:00', '2023-08-28 07:00:00', '2023-08-28 09:00:00', 'Entrenamiento 4', 2),
+(1, '[{"title":"Rondos","description":"Dar pases","material":"4 conos, 3 balones","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/feecb442-4c9f-47b6-8b3a-886b428915fe"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633777632419.jpg"},{"title":"Posesion","description":"Dar el mayor numero de pases posibles sin que el rival robe el balon","material":"6 conos, 7 picas","photo":null,"selectedFile":{"objectURL":"blob:http://localhost:8080/db49f1d9-0d0c-45f3-881c-cd82a8893f5a"},"image_id":"https://awsbucketmanagement.s3.eu-north-1.amazonaws.com/uploads/exercises/1633779310322.jpg"}]', '2023-08-29 22:00:00', '2023-08-29 06:00:00', '2023-08-29 08:00:00', 'Entrenamiento 5', 2);
 
 
 INSERT INTO notas_calendario (equipo_id, titulo, type, bgColor, borderColor, color, dragBgColor, dueDateClass, start, end_time) VALUES

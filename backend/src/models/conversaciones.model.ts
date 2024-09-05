@@ -17,19 +17,35 @@ export default (sequelize: Sequelize, SequelizeTypes: any): typeof Model => {
      * @property {Object} mensajes - Mensajes de la conversación en formato JSON.
      */
     const Conversaciones = sequelize.define('conversaciones', {
+        /**
+         * ID único de la conversación.
+         * @type {number}
+         */
         id: {
           type: SequelizeTypes.INTEGER,
           primaryKey: true,
           autoIncrement: true
         },
+        /**
+         * ID del usuario que inicia la conversación.
+         * @type {number}
+         */
         usuario_id: {
           type: SequelizeTypes.INTEGER,
           allowNull: false
         },
+        /**
+         * ID del usuario destinatario de la conversación.
+         * @type {number}
+         */
         destinatario_id: {
           type: SequelizeTypes.INTEGER,
           allowNull: false
         },
+        /**
+         * Mensajes de la conversación en formato JSON.
+         * @type {Object}
+         */
         mensajes: {
           type: SequelizeTypes.JSON
         }

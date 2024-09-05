@@ -5,5 +5,9 @@
   "exclude": ["**/node_modules/**", "**/__tests__/**"],
   "tsconfig": "tsconfig.json",
   "includeVersion": true,
-  "excludeExternals": true
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "theme": "default",
+  "readme": "README.md"
 }
